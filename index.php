@@ -56,7 +56,7 @@
 		?>
 	</main>
 	<footer>
-		本网站由<a href="https://host-intro.retiehe.com/" target="_blank">热铁盒网页托管</a>强力驱动。
+        本网站由<a href="https://github.com/yuroyumachi/JohnBBS" target="_blank">JohnBBS</a>强力驱动。
 	</footer>
 </body>
 </html>
