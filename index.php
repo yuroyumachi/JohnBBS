@@ -26,9 +26,9 @@
 
 		$datas = json_decode(file_get_contents(".db.json"), true);
 
-        if ($datas["time"] + 86400 < strtotime("today 05:00:00")) {
-            $datas["messages"] = [];
-			$datas["time"] = strtotime("today 05:00:00");
+        if ($datas["time"] + 86400 < time()) {
+            $datas["messages"] = array();
+			$datas["time"] = strtotime("today 05:00");
         }
 
 
@@ -56,7 +56,7 @@
 		?>
 	</main>
 	<footer>
-		本网站由<a href="https://github.com/yuroyumachi/JohnBBS" target="_blank">JohnBBS</a>强力驱动。
+		本网站由<a href="https://host-intro.retiehe.com/" target="_blank">热铁盒网页托管</a>强力驱动。
 	</footer>
 </body>
 </html>
