@@ -20,8 +20,8 @@
         </form>
 		<hr />
 		<?php
-        function getPostData($field, $filter = FILTER_SANITIZE_STRING) {
-            return filter_input(INPUT_POST, $field, $filter) ?? '';
+        function getPostData($field) {
+            return htmlspecialchars($_POST[$field] ?? '', ENT_QUOTES, 'UTF-8');;
         }
 
 		$datas = json_decode(file_get_contents(".db.json"), true);
