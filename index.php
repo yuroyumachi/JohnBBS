@@ -41,6 +41,9 @@
 			if (!($name == "" && $content == "")) {
 				array_push($datas["messages"], array("name"=>$name, "content"=>$content, "post_time"=>$post_time));
 			}
+			else {
+				echo "<p>完全不知道你是怎么做到的<p><hr/>";
+			}
 		}
 
         $reversed_messages = array_reverse($datas["messages"]);
