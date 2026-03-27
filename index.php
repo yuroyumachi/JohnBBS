@@ -37,8 +37,8 @@
 		if ($_SERVER["REQUEST_METHOD"] === "POST") {	
             $name = getPostData("name") ?? "";
             $content = getPostData("content") ?? "";
-            $post_time = time();
-            array_push($datas["messages"], array("name"=>$name, "content"=>$content, "post_time"=>$post_time));
+			$post_time = time();
+			array_push($datas["messages"], array("name"=>$name, "content"=>$content, "post_time"=>$post_time));
 		}
 
         $reversed_messages = array_reverse($datas["messages"]);
@@ -46,6 +46,9 @@
             $name = $msg["name"];
             $content = $msg["content"];
             $post_time = date('m-d H:i:s', $msg["post_time"]);
+			if ($name == "" && $content == "") {
+				continue;
+			}
             echo "<div>";
             echo "<p> $name </p>";
             echo "<p> $content </p>";
