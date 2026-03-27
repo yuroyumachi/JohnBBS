@@ -20,13 +20,15 @@
         </form>
 		<hr />
 		<?php
+		date_default_timezone_set('Asia/Shanghai');
+
         function getPostData($field) {
             return htmlspecialchars($_POST[$field] ?? '', ENT_QUOTES, 'UTF-8');;
         }
 
 		$datas = json_decode(file_get_contents(".db.json"), true);
 
-        if ($datas["time"] + 86400 < time()) {
+        if ($datas["time"] + 86400 <= time()) {
             $datas["messages"] = array();
 			$datas["time"] = strtotime("today 05:00");
         }
