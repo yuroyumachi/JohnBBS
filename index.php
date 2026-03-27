@@ -38,7 +38,9 @@
             $name = getPostData("name") ?? "";
             $content = getPostData("content") ?? "";
 			$post_time = time();
-			array_push($datas["messages"], array("name"=>$name, "content"=>$content, "post_time"=>$post_time));
+			if (!($name == "" && $content == "")) {
+				array_push($datas["messages"], array("name"=>$name, "content"=>$content, "post_time"=>$post_time));
+			}
 		}
 
         $reversed_messages = array_reverse($datas["messages"]);
